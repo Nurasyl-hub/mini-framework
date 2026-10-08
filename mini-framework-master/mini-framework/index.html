@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MiniF — JavaScript Framework</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background: #1a1a2e;
+      color: #eee;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    h1 { font-size: 64px; font-weight: 100; letter-spacing: -2px; color: #e94560; }
+    .sub { font-size: 18px; color: #aaa; margin-top: 8px; margin-bottom: 48px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      width: 100%;
+    }
+
+    .card {
+      background: #16213e;
+      border: 1px solid #0f3460;
+      border-radius: 8px;
+      padding: 24px;
+    }
+    .card h3 { color: #e94560; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
+    .card p { color: #aaa; font-size: 14px; line-height: 1.6; }
+
+    .demo { margin-top: 48px; text-align: center; }
+    .demo a {
+      display: inline-block;
+      padding: 14px 36px;
+      background: #e94560;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 16px;
+      letter-spacing: .5px;
+      transition: background .2s;
+    }
+    .demo a:hover { background: #c73652; }
+
+
+  </style>
+</head>
+<body>
+
+  <h1>MiniF</h1>
+  <p class="sub">A lightweight JavaScript framework — built from scratch</p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Virtual DOM</h3>
+      <p>Describe your UI as a JavaScript object tree using <code>h()</code>. MiniF renders it to real DOM and updates it when state changes.</p>
+    </div>
+    <div class="card">
+      <h3>State Management</h3>
+      <p>Flux-style unidirectional flow. Create a store with <code>createStore(state, reducer)</code>. Dispatch actions, subscribe to changes.</p>
+    </div>
+    <div class="card">
+      <h3>Routing</h3>
+      <p>Hash-based router syncs the URL with your app state. <code>createRouter().addRoute('/path', fn).start()</code></p>
+    </div>
+    <div class="card">
+      <h3>Event Handling</h3>
+      <p>Custom event API via <code>Events.on/off/emit/once</code>. Or use inline <code>onClick</code>, <code>onChange</code> in virtual nodes.</p>
+    </div>
+  </div>
+
+  <div class="demo">
+    <a href="todo/index.html">→ TodoMVC Demo</a>
+  </div>
+
+  <script src="framework/core.js"></script>
+</body>
+</html>
